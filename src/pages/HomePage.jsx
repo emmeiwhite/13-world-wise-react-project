@@ -8,7 +8,7 @@ export default function HomePage() {
 
       <h1>World Wise App</h1>
 
-      <p>Manage Your Tour Data !</p>
+      <Link to="app">Go to the App</Link>
     </div>
   )
 }

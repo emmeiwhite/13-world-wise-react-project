@@ -1,0 +1,19 @@
+.nav {
+  background-color: rgb(73, 236, 73);
+}
+
+.nav .menuList {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.menuList a {
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.menuList a.active {
+  color: orange;
+}
