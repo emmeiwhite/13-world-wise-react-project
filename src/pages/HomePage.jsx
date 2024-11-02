@@ -1,20 +1,14 @@
 import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 
 export default function HomePage() {
   return (
     <div>
-      <h1>WorldWise Beautiful App</h1>
-      <div>
-        <Link to="/">Home</Link>
-      </div>
+      <Navbar />
 
-      <div>
-        <Link to="/pricing">Pricing</Link>
-      </div>
+      <h1>World Wise App</h1>
 
-      <div>
-        <Link to="/product">Product</Link>
-      </div>
+      <p>Manage Your Tour Data !</p>
     </div>
   )
 }
