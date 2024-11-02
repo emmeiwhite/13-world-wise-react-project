@@ -1,7 +1,25 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Product from './pages/product'
+import HomePage from './pages/HomePage'
+import Pricing from './pages/Pricing'
+
 export default function App() {
   return (
-    <div>
-      <h1>World Wise Application</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="product"
+          element={<Product />}
+        />
+        <Route
+          path="/"
+          element={<HomePage />}
+        />
+        <Route
+          path="pricing"
+          element={<Pricing />}
+        />
+      </Routes>
+    </BrowserRouter>
   )
 }
