@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Product from './pages/product'
 import HomePage from './pages/HomePage'
 import Pricing from './pages/Pricing'
+import PageNotFound from './pages/PageNotFound'
 
 export default function App() {
   return (
@@ -18,6 +19,11 @@ export default function App() {
         <Route
           path="pricing"
           element={<Pricing />}
+        />
+
+        <Route
+          path="*"
+          element={<PageNotFound />}
         />
       </Routes>
     </BrowserRouter>
