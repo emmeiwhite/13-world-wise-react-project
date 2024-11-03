@@ -1,5 +1,5 @@
 .nav {
-  background-color: rgb(73, 236, 73);
+  background-color: rgb(0, 217, 225);
 }
 
 .nav .menuList {
@@ -12,8 +12,4 @@
   padding: 0.5rem 1rem;
   display: inline-block;
   text-decoration: none;
-}
-
-.activeLink {
-  color: orange;
 }
