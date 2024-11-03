@@ -35,7 +35,7 @@ export default function App() {
 
           <Route
             path="countries"
-            element={<p>List of Cities</p>}
+            element={<p>List of Countries</p>}
           />
 
           <Route
