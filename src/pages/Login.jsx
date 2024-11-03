@@ -1,3 +1,4 @@
+import Navbar from '../components/Navbar'
 import styles from './Login.module.css'
 import { useState } from 'react'
 
@@ -8,6 +9,7 @@ export default function Login() {
 
   return (
     <main className={styles.login}>
+      <Navbar />
       <form className={styles.form}>
         <div className={styles.row}>
           <label htmlFor="email">Email address</label>
