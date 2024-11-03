@@ -5,9 +5,7 @@ import Logo from './Logo'
 export default function Navbar() {
   return (
     <nav className={styles.nav}>
-      <NavLink to="/">
-        <Logo />
-      </NavLink>
+      <Logo />
 
       <ul className={styles.menuList}>
         <li>
