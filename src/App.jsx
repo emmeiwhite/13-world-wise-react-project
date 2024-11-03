@@ -26,7 +26,23 @@ export default function App() {
         <Route
           path="app"
           element={<AppLayout />}
-        />
+        >
+          {/* --- Nested Routes --- */}
+          <Route
+            path="cities"
+            element={<p>List of Cities</p>}
+          />
+
+          <Route
+            path="countries"
+            element={<p>List of Cities</p>}
+          />
+
+          <Route
+            path="form"
+            element={<p>Form Component</p>}
+          />
+        </Route>
 
         <Route
           path="login"
