@@ -4,5 +4,5 @@
 }
 
 :global(.active) {
-  color: red;
+  color: rgb(177, 255, 132);
 }
