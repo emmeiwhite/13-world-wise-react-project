@@ -31,4 +31,9 @@ a.ctaLink:visited {
   color: var(--color-dark--0);
   padding: 0.8rem 2rem;
   border-radius: 7px;
+  transition: all 0.3s ease-in;
+}
+
+a.ctaLink:hover {
+  background-color: var(--color-brand--dark);
 }
