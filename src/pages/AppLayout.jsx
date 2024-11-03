@@ -1,9 +1,9 @@
-import Navbar from '../components/Navbar'
+import AppNav from '../components/AppNav'
 
 export default function AppLayout() {
   return (
     <div>
-      <Navbar />
+      <AppNav />
       <h1>AppLayout Page!</h1>
     </div>
   )
