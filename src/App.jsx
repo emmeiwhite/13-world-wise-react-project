@@ -11,12 +11,13 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path="product"
-          element={<Product />}
+          // path="/"
+          index
+          element={<HomePage />}
         />
         <Route
-          path="/"
-          element={<HomePage />}
+          path="product"
+          element={<Product />}
         />
         <Route
           path="pricing"
@@ -27,6 +28,10 @@ export default function App() {
           path="app"
           element={<AppLayout />}
         >
+          <Route
+            index
+            element={<p>REPLACE WITH LIST OF CITIES </p>}
+          />
           {/* --- Nested Routes | We use <Outlet/> Component where ever we want to render the nested route !--- */}
           <Route
             path="cities"
