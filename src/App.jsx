@@ -27,10 +27,10 @@ export default function App() {
           path="app"
           element={<AppLayout />}
         >
-          {/* --- Nested Routes --- */}
+          {/* --- Nested Routes | We use <Outlet/> Component where ever we want to render the nested route !--- */}
           <Route
             path="cities"
-            element={<p>List of Cities</p>}
+            element={<p>List of Cities </p>}
           />
 
           <Route
