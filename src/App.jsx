@@ -7,6 +7,7 @@ import AppLayout from './pages/AppLayout'
 import Login from './pages/Login'
 import CityList from './components/CityList'
 import { useEffect, useState } from 'react'
+import CountryList from './components/CountryList'
 
 const url = '../../data/cities.json'
 
@@ -78,7 +79,12 @@ export default function App() {
 
           <Route
             path="countries"
-            element={<p>List of Countries</p>}
+            element={
+              <CountryList
+                cities={cities}
+                isLoading={isLoading}
+              />
+            }
           />
 
           <Route

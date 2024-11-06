@@ -22,16 +22,16 @@ export default function CountryList({ cities, isLoading }) {
   })
 
   console.log(countriesMap)
-  let uniqueCountries = Array.from(countriesMap.values)
+  let uniqueCountries = Array.from(countriesMap.values())
   console.log(uniqueCountries)
 
   return (
     <ul className={styles.countryList}>
-      {uniqueCountries?.map(city => {
+      {uniqueCountries?.map(country => {
         return (
           <CountryItem
-            key={city.id}
-            city={city}
+            key={country.id}
+            country={country}
           />
         )
       })}
