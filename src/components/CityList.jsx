@@ -1,18 +1,22 @@
+import CityItem from './CityItem'
 import styles from './CityList.module.css'
+import Spinner from './Spinner'
 
 export default function CityList({ cities, isLoading }) {
   console.log(cities)
 
   if (isLoading) {
-    return <p>Loading ...</p>
+    return <Spinner />
   }
+
   return (
     <ul className={styles.cityList}>
       {cities?.map(city => {
         return (
-          <li key={city.id}>
-            <p>{city.cityName}</p>
-          </li>
+          <CityItem
+            key={city.id}
+            city={city}
+          />
         )
       })}
     </ul>
