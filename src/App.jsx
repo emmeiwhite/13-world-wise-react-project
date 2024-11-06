@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react'
 const url = '../../data/cities.json'
 
 export default function App() {
-  const [cities, setCities] = useState()
+  const [cities, setCities] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   async function fetchCities() {
@@ -22,9 +22,10 @@ export default function App() {
         throw new Error('Error loading cities data')
       }
       const data = await response.json()
-      setCities(data.cities)
+      // setCities(data.cities)
+      setCities([])
+
       setIsLoading(false)
-      console.log(data.cities)
     } catch (error) {
       console.log(error)
     } finally {
