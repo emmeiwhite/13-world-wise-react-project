@@ -5,8 +5,35 @@ import Pricing from './pages/Pricing'
 import PageNotFound from './pages/PageNotFound'
 import AppLayout from './pages/AppLayout'
 import Login from './pages/Login'
+import CityList from './components/CityList'
+import { useEffect, useState } from 'react'
+
+const url = '../../data/cities.json'
 
 export default function App() {
+  const [cities, setCities] = useState()
+  const [isLoading, setIsLoading] = useState(false)
+
+  async function fetchCities() {
+    try {
+      setIsLoading(false)
+      const response = await fetch(url)
+      if (!response.ok) {
+        throw new Error('Error loading cities data')
+      }
+      const data = await response.json()
+      setCities(data.cities)
+      setIsLoading(false)
+      console.log(data.cities)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+  useEffect(() => {
+    fetchCities()
+  }, [])
   return (
     <BrowserRouter>
       <Routes>
@@ -30,12 +57,22 @@ export default function App() {
         >
           <Route
             index
-            element={<p>REPLACE WITH LIST OF CITIES </p>}
+            element={
+              <CityList
+                cities={cities}
+                isLoading={isLoading}
+              />
+            }
           />
           {/* --- Nested Routes | We use <Outlet/> Component where ever we want to render the nested route !--- */}
           <Route
             path="cities"
-            element={<p>List of Cities </p>}
+            element={
+              <CityList
+                cities={cities}
+                isLoading={isLoading}
+              />
+            }
           />
 
           <Route
