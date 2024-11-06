@@ -22,8 +22,8 @@ export default function App() {
         throw new Error('Error loading cities data')
       }
       const data = await response.json()
-      // setCities(data.cities)
-      setCities([])
+      setCities(data.cities)
+      // setCities([]) Testing when no cities are there
 
       setIsLoading(false)
     } catch (error) {
