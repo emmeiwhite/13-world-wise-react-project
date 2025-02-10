@@ -1,0 +1,18 @@
+.nav {
+  padding: 1rem 1.25rem;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav li {
+  transition: all 0.4s ease-out;
+}
+
+.nav li :global(.active) {
+  text-decoration: dotted;
+  background-color: orange;
+  padding: 0.5rem 1rem;
+}
