@@ -4,6 +4,7 @@ import Pricing from './pages/Pricing'
 import Product from './pages/Product'
 import PageNotFound from './pages/PageNotFound'
 import AppLayout from './pages/AppLayout'
+import Login from './pages/Login'
 
 const App = () => {
   return (
@@ -22,6 +23,11 @@ const App = () => {
         <Route
           path="products"
           element={<Product />}
+        />
+
+        <Route
+          path="login"
+          element={<Login />}
         />
 
         <Route
