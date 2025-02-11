@@ -33,6 +33,11 @@ const App = () => {
         <Route
           path="app"
           element={<AppLayout />}>
+          {/* Adding the index route for /app when no child route matches */}
+          <Route
+            index
+            element={<h2>LIST</h2>}
+          />
           <Route
             path="cities"
             element={<h2>List of Cities</h2>}
