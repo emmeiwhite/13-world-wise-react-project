@@ -32,8 +32,22 @@ const App = () => {
 
         <Route
           path="app"
-          element={<AppLayout />}
-        />
+          element={<AppLayout />}>
+          <Route
+            path="cities"
+            element={<h2>List of Cities</h2>}
+          />
+
+          <Route
+            path="countries"
+            element={<h2>Countries</h2>}
+          />
+
+          <Route
+            path="form"
+            element={<h2>Form</h2>}
+          />
+        </Route>
 
         <Route
           path="*"
