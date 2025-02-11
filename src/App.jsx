@@ -11,7 +11,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/"
+          index
           element={<HomePage />}
         />
 
@@ -36,7 +36,7 @@ const App = () => {
           {/* Adding the index route for /app when no child route matches */}
           <Route
             index
-            element={<h2>LIST</h2>}
+            element={<h2>LIST OF CITIES (TO BE KEPT AS DEFAULT COMPONENT) </h2>}
           />
           <Route
             path="cities"
