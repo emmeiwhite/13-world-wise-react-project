@@ -5,8 +5,40 @@ import Product from './pages/Product'
 import PageNotFound from './pages/PageNotFound'
 import AppLayout from './pages/AppLayout'
 import Login from './pages/Login'
+import CityList from './components/CityList'
+import { useState, useEffect } from 'react'
 
+const BASE_URL = 'http://localhost:8000'
 const App = () => {
+  const [cities, setCities] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchCities = async () => {
+      try {
+        setLoading(true)
+        setError(null)
+
+        const response = await fetch(`${BASE_URL}/cities`)
+
+        console.log(response)
+        if (!response.ok) {
+          throw new Error(`HTTP Error! Status: ${response.status}`)
+        }
+
+        const data = await response.json()
+        console.log(data)
+        setCities(data)
+      } catch (err) {
+        setError(err.message)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchCities()
+  }, [])
   return (
     <BrowserRouter>
       <Routes>
@@ -36,11 +68,23 @@ const App = () => {
           {/* Adding the index route for /app when no child route matches */}
           <Route
             index
-            element={<h2>LIST OF CITIES (TO BE KEPT AS DEFAULT COMPONENT) </h2>}
+            element={
+              <CityList
+                loading={loading}
+                cities={cities}
+                error={error}
+              />
+            }
           />
           <Route
             path="cities"
-            element={<h2>List of Cities</h2>}
+            element={
+              <CityList
+                loading={loading}
+                cities={cities}
+                error={error}
+              />
+            }
           />
 
           <Route

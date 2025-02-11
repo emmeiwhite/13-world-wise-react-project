@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from './Homepage.module.css'
 import PageNav from '../components/PageNav'
+import TabsPractice from '../components/tabs/TabsPractice'
 
 export default function Homepage() {
   return (
@@ -22,6 +23,8 @@ export default function Homepage() {
           Starting tracking now
         </Link>
       </section>
+
+      <TabsPractice />
     </main>
   )
 }
