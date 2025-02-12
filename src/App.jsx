@@ -7,6 +7,7 @@ import AppLayout from './pages/AppLayout'
 import Login from './pages/Login'
 import CityList from './components/CityList'
 import { useState, useEffect } from 'react'
+import CountryList from './components/CountryList'
 
 const BASE_URL = 'http://localhost:8000'
 const App = () => {
@@ -89,7 +90,13 @@ const App = () => {
 
           <Route
             path="countries"
-            element={<h2>Countries</h2>}
+            element={
+              <CountryList
+                loading={loading}
+                cities={cities}
+                error={error}
+              />
+            }
           />
 
           <Route
