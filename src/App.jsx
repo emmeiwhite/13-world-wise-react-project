@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import CityList from './components/CityList'
 import { useState, useEffect } from 'react'
 import CountryList from './components/CountryList'
+import City from './components/City'
 
 const BASE_URL = 'http://localhost:8000'
 const App = () => {
@@ -86,6 +87,12 @@ const App = () => {
                 error={error}
               />
             }
+          />
+
+          {/* Params */}
+          <Route
+            path="cities/:id"
+            element={<City />}
           />
 
           <Route
