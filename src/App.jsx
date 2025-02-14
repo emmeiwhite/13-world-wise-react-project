@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import Pricing from './pages/Pricing'
 import Product from './pages/Product'
@@ -69,13 +69,14 @@ const App = () => {
           path="app"
           element={<AppLayout />}>
           {/* Adding the index route for /app when no child route matches */}
+
+          {/* We are now updating the index route, with Navigate to re-direct the initial index towards the cities route set in next route. This helps to auto select cities on initial render when we jump on that AppLayout page */}
           <Route
             index
             element={
-              <CityList
-                loading={loading}
-                cities={cities}
-                error={error}
+              <Navigate
+                replace
+                to="cities"
               />
             }
           />
